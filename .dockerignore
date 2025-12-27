@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.ipynb
+Linear_Regression_Data.csv
+train.ipynb
+.git
+.gitignore
+commands.txt

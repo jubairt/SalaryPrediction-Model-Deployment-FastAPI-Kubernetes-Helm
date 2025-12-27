@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: salary-fastapi
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: LoadBalancer
+  port: 8000
+
+containerPort: 8000
