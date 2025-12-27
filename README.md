@@ -30,25 +30,6 @@ You will learn:
 
 ---
 
-## 🏗️ High-level workflow
-
-CSV Dataset
-↓
-Model Training (train.ipynb)
-↓
-Saved Model (model.pkl)
-↓
-FastAPI Inference Service
-↓
-Docker Image
-↓
-Kubernetes Deployment
-↓
-Helm (Install / Upgrade / Scale)
-
-
----
-
 ## 🛠️ Prerequisites
 
 Ensure the following tools are installed:
@@ -69,13 +50,13 @@ This section lists **all the commands** a user needs to run **after downloading 
 
 ---
 
-### 1️⃣ Clone the repository and move into project directory
+### 🧿 Clone the repository and move into project directory
 
 ```powershell
 git clone <repository-url>
 ```
 
-### 4️⃣ Build Docker image
+### 🧿 Build Docker image
 
 ```powershell
 docker build -t salary-fastapi .
@@ -87,7 +68,7 @@ Verify image exists:
 docker images
 ```
 
-### 7️⃣ Cleanup commands
+### 🧿 Cleanup commands
 
 Uninstall Helm release:
 ```powershell
@@ -98,7 +79,19 @@ Delete all Kubernetes resources:
 kubectl delete all --all
 ```
 
-### 8️⃣ Deploy application using Helm
+### 🧿 Verify cleanup
+
+Check that the Helm release is removed:
+```powershell
+helm list
+```
+
+Check that all Kubernetes resources are deleted:
+```powershell
+kubectl get all
+```
+
+### 🧿 Deploy application using Helm
 
 First, run a dry-run to verify Helm templates:
 ```powershell
@@ -112,7 +105,7 @@ helm upgrade --install salary-fastapi helm/salary-fastapi
 
 
 
-### 9️⃣ Verify Kubernetes deployment
+### 🧿 Verify Kubernetes deployment
 
 ```powershell
 helm list
@@ -120,7 +113,7 @@ kubectl get pods
 kubectl get svc
 ```
 
-### 3️⃣ Scale application using 
+### 🧿 Scale application using 
 
 Scale up:
 ```powershell
@@ -130,6 +123,13 @@ helm upgrade salary-fastapi helm/salary-fastapi --set replicaCount=3
 Scale down:
 ```powershell
 helm upgrade salary-fastapi helm/salary-fastapi --set replicaCount=1
+```
+
+### 🧿 Verify scaling
+
+Check the number of running pods:
+```powershell
+kubectl get pods
 ```
 
 ## ✅ Conclusion
