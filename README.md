@@ -68,6 +68,22 @@ Verify image exists:
 docker images
 ```
 
+### 🧿 Create Helm
+
+Create Helm chart
+
+```powershell
+mkdir helm
+```
+
+Create Helm chart:
+
+```powershell
+helm create helm/salary-fastapi
+```
+
+
+
 ### 🧿 Cleanup commands
 
 Uninstall Helm release:
